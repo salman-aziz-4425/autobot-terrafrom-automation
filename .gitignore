@@ -6,3 +6,11 @@ Absolute_Comfort_bu_extraction.zip
 Yarbrough_and_Sons_bu_extraction
 Yarbrough_and_Sons_campaign_extraction
 Absolute_Comfort_bu_extraction
+
+
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+
+
+.env

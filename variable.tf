@@ -58,12 +58,4 @@ variable "credentials_path" {
   default     = "/Users/salmanaziz/.config/gcloud/application_default_credentials.json"
 }
 
-variable "pubsub_topic_name" {
-  description = "PubSub Topic Name"
-  type        = map(string)
-  default     = {
-    "Yarbrough_and_Sons_bu_extraction" = "projects/autobot-v1-356820/topics/Yarbrough_and_Sons_bu_extraction"
-    "Yarbrough_and_Sons_campaign_extraction" = "projects/autobot-v1-356820/topics/Yarbrough_and_Sons_campaign_extraction"
-  }
-}
 
