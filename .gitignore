@@ -1,20 +1,24 @@
-# Terraform
-.terraform/
+# Ignore Terraform state files
 *.tfstate
 *.tfstate.*
+
+# Ignore Terraform backup files
+*.backup
+
+# Ignore logs and debug files
+*.log
+
+# Ignore local Terraform directories
+.terraform/
 .terraform.lock.hcl
-*.tf
 
-# Python
-__pycache__/
-*.pyc
+# Ignore credentials or sensitive files
+*.json
 
-# Function archives
-functions/*/function.zip
+# Ignore IDE-specific files
+.vscode/
+.idea/
 
-.env
-
-functions/
-
-
-.DS_Store
+# Ignore other temporary files
+*.swp
+*.tmp

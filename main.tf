@@ -6,29 +6,28 @@ module "function_storage" {
 }
 
 module "pubsub" {
-  source    = "./modules/pubsub"
-  functions = var.functions
-  tenants   = var.tenants
-  region    = var.region
+  source     = "./modules/pubsub"
+  functions  = var.functions
+  tenants    = var.tenants
+  region     = var.region
   depends_on = [module.function_storage]
 }
 
 module "cloud_functions" {
-  source    = "./modules/cloud_functions"
-  functions = var.functions
-  tenants   = var.tenants
-  region    = var.region
+  source     = "./modules/cloud_functions"
+  functions  = var.functions
+  tenants    = var.tenants
+  region     = var.region
   depends_on = [module.pubsub, module.function_storage]
 }
 
 module "cloud_scheduler" {
-  source            = "./modules/cloud_scheduler"
-  functions         = var.functions
-  tenants           = var.tenants
-  region            = var.region
-  pubsub_topic_name = module.pubsub.name
-  depends_on        = [module.cloud_functions]
-  timezone          = var.timezone
+  source     = "./modules/cloud_scheduler"
+  functions  = var.functions
+  tenants    = var.tenants
+  region     = var.region
+  depends_on = [module.cloud_functions]
+  timezone   = var.timezone
 }
 
 terraform {
