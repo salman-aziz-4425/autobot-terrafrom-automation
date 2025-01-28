@@ -2,7 +2,7 @@
 *.tfstate
 *.tfstate.*
 *.terraform.tfstate.backup
-.tfplan
+*.tfplan
 
 # Ignore Terraform backup files
 *.backup
@@ -27,4 +27,5 @@ terraform.tfstate.backup
 # Ignore other temporary files
 *.swp
 *.tmp
+
 
