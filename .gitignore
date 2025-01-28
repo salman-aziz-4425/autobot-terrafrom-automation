@@ -22,3 +22,5 @@
 # Ignore other temporary files
 *.swp
 *.tmp
+
+functions/*.zip
