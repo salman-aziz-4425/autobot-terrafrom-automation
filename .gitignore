@@ -30,3 +30,5 @@ terraform.tfstate.backup
 
 
 Yarbrough_and_Sons_campaign_extraction/cred.json
+
+variables.tf
