@@ -1,16 +1,17 @@
-Yarbrough_and_Sons_bu_extraction.zip
-Yarbrough_and_Sons_campaign_extraction.zip
-
-Absolute_Comfort_bu_extraction.zip
-
-Yarbrough_and_Sons_bu_extraction
-Yarbrough_and_Sons_campaign_extraction
-Absolute_Comfort_bu_extraction
-
-
+# Terraform
 .terraform/
-terraform.tfstate
-terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
 
+# Python
+__pycache__/
+*.pyc
+
+# Function archives
+functions/*/function.zip
 
 .env
+
+functions/
+
