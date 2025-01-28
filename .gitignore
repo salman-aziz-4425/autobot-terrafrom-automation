@@ -3,6 +3,7 @@
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
+*.tf
 
 # Python
 __pycache__/
@@ -15,3 +16,5 @@ functions/*/function.zip
 
 functions/
 
+
+.DS_Store

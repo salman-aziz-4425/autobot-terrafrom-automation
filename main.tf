@@ -1,15 +1,16 @@
-# module "function_storage" {
-#   source      = "./modules/function_storage"
-#   functions   = var.functions
-#   tenants     = var.tenants
-#   bucket_name = var.bucket_name
-# }
+module "function_storage" {
+  source      = "./modules/function_storage"
+  functions   = var.functions
+  tenants     = var.tenants
+  bucket_name = var.bucket_name
+}
 
 module "pubsub" {
   source    = "./modules/pubsub"
   functions = var.functions
   tenants   = var.tenants
   region    = var.region
+  depends_on = [module.function_storage]
 }
 
 module "cloud_functions" {
@@ -17,8 +18,7 @@ module "cloud_functions" {
   functions = var.functions
   tenants   = var.tenants
   region    = var.region
-  depends_on = [module.pubsub]
-  # depends_on = [module.function_storage] # Ensure functions are uploaded before creating Cloud Functions
+  depends_on = [module.pubsub, module.function_storage]
 }
 
 module "cloud_scheduler" {
@@ -28,6 +28,7 @@ module "cloud_scheduler" {
   region            = var.region
   pubsub_topic_name = module.pubsub.name
   depends_on        = [module.cloud_functions]
+  timezone          = var.timezone
 }
 
 terraform {

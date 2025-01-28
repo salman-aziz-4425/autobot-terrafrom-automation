@@ -4,7 +4,7 @@ resource "google_cloudfunctions_function" "functions" {
       for function in var.functions : [
         for tenant in var.tenants : {
           function_name = function.name
-          tenant_name   = replace(tenant.name, " ", "_")
+          tenant_name   = replace(lower(tenant.name), " ", "_")
           tenant_id     = tenant.id
           function     = function
         }
@@ -22,9 +22,8 @@ resource "google_cloudfunctions_function" "functions" {
 
   event_trigger {
     event_type = "google.pubsub.topic.publish"
-    resource   = "projects/autobot-v1-356820/topics/${each.key}"
+    resource   = "projects/autobot-v1-356820/topics/${lower(each.key)}"
   }
-
   environment_variables = {
     TENANT_IDS = each.value.tenant_id
   }

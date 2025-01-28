@@ -15,7 +15,7 @@ resource "google_cloud_scheduler_job" "schedulers" {
   name        = "${each.value.tenant_name}_${each.value.function_name}"
   description = each.value.function.description
   schedule    = each.value.function.frequency
-  time_zone   = each.value.function.timezone
+  time_zone   = lookup(var.timezone, each.value.tenant_name)
   region      = var.region
 
   pubsub_target {
