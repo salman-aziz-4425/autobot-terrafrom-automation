@@ -23,4 +23,7 @@
 *.swp
 *.tmp
 
-functions/*.zip
+functions/**/*.zip.terraform/
+*.tfstate
+*.tfstate.backup
+terraform/providers/
