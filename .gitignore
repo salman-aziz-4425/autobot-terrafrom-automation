@@ -31,3 +31,14 @@ terraform.tfstate.backup
 
 Yarbrough_and_Sons_campaign_extraction/cred.json
 Absolute Comfort_extraction/cred.json
+
+# Backend
+backend.tfvars
+*.backend
+
+# State files
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.tfstate.lock.info
+
+functions/
