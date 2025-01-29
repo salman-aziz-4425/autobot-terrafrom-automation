@@ -20,7 +20,3 @@ resource "google_storage_bucket_object" "functions" {
     content_hash = filemd5("${path.root}/functions/${each.value.function_name}.zip")
   }
 }
-
-output "function_urls" {
-  value = { for k, v in google_storage_bucket_object.functions : k => v.media_link }
-} 

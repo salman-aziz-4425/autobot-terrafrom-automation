@@ -3,7 +3,7 @@ variable "functions" {
   type = list(object({
     name           = string
     runtime        = string
-    memory         = string
+    memory         = number
     entry_point    = string
     source_archive = string
     frequency      = string
@@ -13,7 +13,7 @@ variable "functions" {
     {
       name           = "bu_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 512
       entry_point    = "extract_business_units"
       source_archive = "bu_extraction.zip"
       frequency      = "0 0 1 * *"
@@ -22,7 +22,7 @@ variable "functions" {
     {
       name           = "campaign_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 1024
       entry_point    = "extract_campaigns"
       source_archive = "campaign_extraction.zip"
       frequency      = "*/2 * * * *"
@@ -31,7 +31,7 @@ variable "functions" {
     {
       name           = "customer_contact_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 1024
       entry_point    = "extract_cdc_customer_contact"
       source_archive = "customer_contact_extraction.zip"
       frequency      = "*/4 * * * *"
@@ -41,7 +41,7 @@ variable "functions" {
     {
       name           = "customer_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 1024
       entry_point    = "extract_customers"
       source_archive = "customer_extraction.zip"
       frequency      = "*/3 * * * *"
@@ -50,7 +50,7 @@ variable "functions" {
     {
       name           = "customer_information_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 2048
       entry_point    = "transform"
       source_archive = "customer_information_extraction.zip"
       frequency      = "*/6 * * * *"
@@ -59,7 +59,7 @@ variable "functions" {
     {
       name           = "job_type_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 512
       entry_point    = "extract_job_types"
       source_archive = "job_type_extraction.zip"
       frequency      = "0 0 1 * *"
@@ -68,7 +68,7 @@ variable "functions" {
     {
       name           = "location_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 1024
       entry_point    = "extract_locations"
       source_archive = "location_extraction.zip"
       frequency      = "*/2 * * * *"
@@ -77,7 +77,7 @@ variable "functions" {
     {
       name           = "membership_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 1024
       entry_point    = "extract_memberships"
       source_archive = "membership_extraction.zip"
       frequency      = "*/2 * * * *"
@@ -86,7 +86,7 @@ variable "functions" {
     {
       name           = "membership_types_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 512
       entry_point    = "extract_membership_types"
       source_archive = "membership_types_extraction.zip"
       frequency      = "0 0 * * 5"
@@ -95,7 +95,7 @@ variable "functions" {
     {
       name           = "technician_extraction"
       runtime        = "python311"
-      memory         = "512MB"
+      memory         = 512
       entry_point    = "extract_technician"
       source_archive = "technician_extraction.zip"
       frequency      = "0 0 1 * *"

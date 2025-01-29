@@ -30,21 +30,8 @@ module "cloud_scheduler" {
   timezone   = var.timezone
 }
 
-terraform {
-  required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 5.0"
-    }
-  }
-}
 
-provider "google" {
-  project     = "autobot-v1-356820"
-  region      = var.region
-  zone        = "us-central1-c"
-  credentials = file(var.credentials_path)
-}
+
 
 resource "null_resource" "check_credentials" {
   provisioner "local-exec" {

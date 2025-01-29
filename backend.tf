@@ -1,4 +1,3 @@
-# This file is used for backend configuration
 terraform {
   backend "gcs" {
     bucket = "autobot_scheduler_cloud_function"

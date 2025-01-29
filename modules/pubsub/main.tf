@@ -14,11 +14,3 @@ resource "google_pubsub_topic" "topics" {
   
   name = "${each.value.tenant_name}_${each.value.function_name}"
 }
-
-output "name" {
-  value = { for k, v in google_pubsub_topic.topics : k => v.name }
-}
-
-output "id" {
-  value = { for k, v in google_pubsub_topic.topics : k => v.id }
-}

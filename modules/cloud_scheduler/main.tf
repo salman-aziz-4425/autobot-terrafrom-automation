@@ -23,11 +23,3 @@ resource "google_cloud_scheduler_job" "schedulers" {
     data       = base64encode(jsonencode({ "tenant_id" = each.value.tenant_id }))
   }
 }
-
-output "names" {
-  value = { for k, v in google_cloud_scheduler_job.schedulers : k => v.name }
-}
-
-output "ids" {
-  value = { for k, v in google_cloud_scheduler_job.schedulers : k => v.id }
-}
