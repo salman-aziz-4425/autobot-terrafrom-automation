@@ -37,9 +37,10 @@ backend.tfvars
 *.backend
 
 # State files
+
+.terraform.tfstate.lock.info
 terraform.tfstate
 terraform.tfstate.backup
-.terraform.tfstate.lock.info
 
 functions/**.zip
 

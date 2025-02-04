@@ -117,6 +117,14 @@ variable "tenants" {
     }, {
     name = "Absolute Comfort"
     id   = "563439940"
+    },
+    {
+      name = "Alaskan AC Phoenix",
+      id   = "408376968"
+    },
+    {
+      name = "Alaskan AC Tucson",
+      id   = "385536259"
     }
   ]
 }
@@ -126,9 +134,12 @@ variable "timezone" {
   type        = map(string)
   default = {
     "yarbrough_and_sons" = "America/Chicago"
-    "absolute_comfort"   = "America/New_York"
+    "absolute_comfort"   = "America/New_York",
+    "alaskan_ac_phoenix" = "America/Phoenix",
+    "alaskan_ac_tucson"  = "America/Phoenix"
   }
 }
+
 
 variable "region" {
   description = "GCP Region"
